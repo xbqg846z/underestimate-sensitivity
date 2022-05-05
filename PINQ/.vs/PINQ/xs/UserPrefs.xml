@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{C69297F1-386B-4FA9-A39B-C6158754355D}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestHarness/TestHarness.cs">
+    <Files>
+      <File FileName="TestHarness/TestHarness.cs" Line="37" Column="44" />
+      <File FileName="PINQ/PINQueryable.cs" Line="298" Column="28" />
+      <File FileName="MachineLearning/MachineLearning.cs" Line="165" Column="35" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PINQ" expanded="True">
+            <Node name="MachineLearning" expanded="True" />
+            <Node name="PINQ" expanded="True" />
+            <Node name="TestHarness" expanded="True">
+              <Node name="TestHarness.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TestHarness PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,8 @@
+arr_u:
+  arr_u:
+    arr_u:
+      row_privacy: True
+      col1:
+        type: float
+        lower: -1
+        upper: 1

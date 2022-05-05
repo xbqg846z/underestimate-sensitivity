@@ -1,0 +1,18 @@
+sensitivity_attack:
+  unsized_64:
+    unsized_64_u:
+      row_privacy: True
+      uid:
+        type: int
+      val:
+        type: float
+        lower: -1.
+        upper: 1.
+    unsized_64_v:
+      row_privacy: True
+      uid:
+        type: int
+      val:
+        type: float
+        lower: -1.
+        upper: 1.

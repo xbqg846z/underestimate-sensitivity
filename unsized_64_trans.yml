@@ -1,0 +1,8 @@
+unsized_64_trans_u:
+  unsized_64_trans_u:
+    unsized_64_trans_u:
+      row_privacy: True
+      col1:
+        type: float
+        lower: -1
+        upper: 1

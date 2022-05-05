@@ -1,0 +1,22 @@
+---
+databases:
+- database: "sensitivity_attack"
+  dialect: "mysql"
+  namespace: "sensitivity_attack"
+  tables:
+  - table: "sized_64_4_trans_u"
+    columns:
+    - name: "col1"
+  - table: "sized_64_4_trans_v"
+    columns:
+    - name: "col1"
+  - table: "sized_6_45_u"
+    columns:
+    - name: "uid"
+      maxFreq: 1
+    - name: "val"
+  - table: "sized_6_45_v"
+    columns:
+    - name: "uid"
+      maxFreq: 1
+    - name: "val"
