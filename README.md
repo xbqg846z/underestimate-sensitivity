@@ -23,9 +23,13 @@ Any backends based on the following are more difficult to exploit:
     * -Dmaven.test.skip to skip tests
     * -Dexec.cleanupDaemonThreads=false to avoid confusing errors when cleaning up Postgres and MySql threadpools
 * security:
-    * vulnerable to the 64-bit sized sum attack with just 17 records
-    * it would also be vulnerable to the unsized sum attack if the library switched, 
-        because you can connect it to a MySql backend
+    * vulnerable to the 64-bit sized sum attack with just 17 records, via section D.4
+    * since Chorus disallows more complicated expressions in where clauses, 
+        it is more difficult to render any given dataset to a susceptible form
+* precaution:
+    * switching to a "max(|L|, U)" sensitivity would also be vulnerable to Section D.6
+        because at least one database backend computes sequential sums (MySQL)
+        - MySQL also supports 32-bit floats, which would make the attack more realistic
     
 
 # Google Privacy on Beam
@@ -34,9 +38,9 @@ Any backends based on the following are more difficult to exploit:
 * check the readme in the new folder
 * security:
     * beam too slow to handle the 64-bit dataset, and would crash before exploit finished
-        * need to either run attack on a beefy computer, or fix the memory usage
-    * cannot run attack on cluster, because order is important to preserve
-    * cannot switch to 32-bit floats, because the accumulator is 64-bit (nice!) 
+        * need to either run attack on a more capable computer, or fix the memory usage
+    * cannot execute attack on cluster, because order is important to preserve
+    * cannot execute the attack by switching to 32-bit floats, because the accumulator is 64-bit (nice!) 
 
 
 # PINQ
