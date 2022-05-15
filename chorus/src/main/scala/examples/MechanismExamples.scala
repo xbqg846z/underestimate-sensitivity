@@ -23,14 +23,22 @@ object MechanismExamples extends App {
     // Define the privacy accountant
     val accountant = new EpsilonCompositionAccountant()
 
+    val mech_u = new LaplaceMechClipping(1.0, .5000000000000008, .5000000000000009, root_u, config)
+    val mech_v = new LaplaceMechClipping(1.0, .5000000000000008, .5000000000000009, root_v, config)
+    val limit = 10000
     // Run the mechanisms
-    val sum_u = new LaplaceMechClipping(1.0, .5000000000000008, .5000000000000009, root_u, config).execute(accountant)
-    val sum_v = new LaplaceMechClipping(1.0, .5000000000000008, .5000000000000009, root_v, config).execute(accountant)
+    val counts_u = (1 to limit).map(_ => mech_u.execute(accountant).head).groupBy(identity).mapValues(_.size)
+    val counts_v = (1 to limit).map(_ => mech_v.execute(accountant).head).groupBy(identity).mapValues(_.size)
 
-    println("Sum(u) " + sum_u)
-    println("Sum(v) " + sum_v)
+    println("Sum(u) " + counts_u)
+    println("Sum(v) " + counts_v)
 
-    println("Total privacy cost: " + accountant.getTotalCost())
+    // Sum(u) Map(Row(List(8.500000000000012)) -> 9994, Row(List(8.500000000000014)) -> 3, Row(List(8.50000000000001)) -> 3)
+    // Sum(v) Map(Row(List(8.500000000000012)) -> 1, Row(List(8.500000000000014)) -> 9998, Row(List(8.500000000000016)) -> 1)
+
+    // cleaned up:
+    // Sum(u) | 9994, 3 |
+    // Sum(v) | 1, 9998 |
   }
 
   def where_sized_attack(database: Database) = {
